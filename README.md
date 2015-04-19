@@ -1,5 +1,6 @@
 # snake
 Programas para controlar un Snake Robot...
+
 Detalles:
 -Servomotores Dynamixel AX-12a
 -Raspberry Pi B+
