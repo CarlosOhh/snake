@@ -1,4 +1,4 @@
-# main.py
+# main.py   
 
 from flask import Flask, render_template, Response
 from camera_colores import VideoCamera
