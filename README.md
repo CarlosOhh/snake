@@ -13,3 +13,5 @@ En la carpeta de "EyeSnake" estan los programas necesarios para poder publicar u
 Para su implemntación te recomendamos los siguientes links
 http://www.chioka.in/python-live-video-streaming-example/
 http://makezine.com/projects/raspberry-eye-remote-servo-cam/
+
+En la carpeta de "RoutinesMovements" estan los archivos que generan el movimiento de onduación lateral o serpenteo haciendo uso de la targeta Arbotix y servomotores dynamixel AX12a.
