@@ -10,8 +10,8 @@ while(True):
 
 	verde_bajos = np.array([49,50,50], dtype=np.uint8)
 	verde_altos = np.array([80, 255, 255], dtype=np.uint8)
-        azul_bajos = np.array([100,50,50], dtype=np.uint8)
-        azul_altos = np.array([130, 255, 255], dtype=np.uint8)
+        azul_bajos = np.array([90,50,50], dtype=np.uint8)
+        azul_altos = np.array([110, 255, 255], dtype=np.uint8)
 
 	#Crear una mascara con solo los pixeles dentro del rango de verdes
 	mask = cv2.inRange(hsv, verde_bajos, verde_altos)
@@ -36,13 +36,41 @@ while(True):
 	#Buscamos el centro x, y del objeto azul
                 x1 = int(round(moments1['m10']/moments1['m00']))
                 y1 = int(moments1['m01']/moments1['m00'])
-         
+	
+	#Guardar datos
+	        xaux=str(x)
+	        yaux=str(y)
+	        x1aux=str(x1)
+	        y1aux=str(y1)
+
+		def creaciontxt():
+		    archi=open('sensores.py','w')
+		    archi.close()
+
+		creaciontxt()
+
+		def creartxt():
+		    archi=open('sensores.py','w')
+		    archi.close()
+
+		def grabartxt():
+		    archi=open('sensores.py','a')
+		    archi.write('print "')
+		    archi.write(xaux)
+                    archi.write(',')
+                    archi.write(yaux)
+                    archi.write(',')
+                    archi.write(x1aux)
+                    archi.write(',')
+                    archi.write(y1aux)
+                    archi.write('"\n')
+		    archi.close()
+
+		creartxt()
+		grabartxt()
+
         #Mostramos sus coordenadas por pantalla
-	        print "XV=", x," YV=", y," XA=", x1," YA=", y1
-#	        print "YV = ", y
-#		print "XA = ", x1
-#                print "YA = ", y1
- 
+	        print "XV=", xaux," YV=", yaux," XA=", x1aux," YA=", y1aux
         #Dibujamos una marca en el centro del objeto
 	        cv2.rectangle(image, (x, y), (x+2, y+2),(0,0,255), 2)        
         #Dibujamos una marca en el centro del objeto
